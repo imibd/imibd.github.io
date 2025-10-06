@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="bn" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
@@ -15,11 +15,25 @@
     body {
       font-family: 'Hind Siliguri', sans-serif;
     }
+    
+    .carousel-container {
+      scroll-behavior: smooth;
+    }
+    
+    .carousel-item {
+      flex: 0 0 calc(100% / 1);
+    }
+    
+    @media (min-width: 768px) {
+      .carousel-item {
+        flex: 0 0 calc(100% / 3);
+      }
+    }
   </style>
 </head>
 
 <body class="bg-amber-50" x-data="app()">
-  <nav class="bg-amber-800 text-white sticky top-0 z-50">
+  <nav class="bg-gradient-to-r from-amber-500 to-amber-700 text-white sticky top-0 z-50">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
       <div class="flex items-center">
         <span class="text-xl font-bold">গুড়ের দোকান</span>
@@ -61,7 +75,7 @@
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-12 text-amber-800">কেন আমাদের গুড় কিনবেন?</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div class="bg-amber-50 p-6 rounded-lg shadow-md text-center">
           <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg class="w-8 h-8 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -89,6 +103,15 @@
           <h3 class="text-xl font-semibold mb-2 text-amber-800">সহজ অর্ডার প্রক্রিয়া</h3>
           <p class="text-gray-700">কয়েক ক্লিকেই অর্ডার করুন, দ্রুত ডেলিভারি সারাদেশে।</p>
         </div>
+        <div class="bg-amber-50 p-6 rounded-lg shadow-md text-center">
+          <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-amber-800">সহজ অর্ডার প্রক্রিয়া</h3>
+          <p class="text-gray-700">কয়েক ক্লিকেই অর্ডার করুন, দ্রুত ডেলিভারি সারাদেশে।</p>
+        </div>
       </div>
     </div>
   </section>
@@ -106,6 +129,7 @@
             <p class="text-gray-700 mb-4">খেজুরের রস থেকে তৈরি বিশুদ্ধ গুড়। মিষ্টি স্বাদ ও অসাধারণ গন্ধযুক্ত। ভিটামিন ও মিনারেলে ভরপুর এই গুড় স্বাস্থ্যের জন্য অত্যন্ত উপকারী।</p>
             <div class="flex justify-between items-center">
               <span class="text-xl font-bold text-amber-700">৳ ২০০/কেজি</span>
+              <button @click="directOrder(0)" class="bg-gradient-to-r from-amber-500 to-amber-700 text-white p-3 rounded-lg">এখনই অর্ডার করুন</button>
             </div>
           </div>
         </div>
@@ -118,6 +142,7 @@
             <p class="text-gray-700 mb-4">তাজা আখের রস থেকে তৈরি গুড়। প্রাকৃতিক মিষ্টির উৎস হিসেবে পরিচিত। আয়রন, ক্যালসিয়াম ও অন্যান্য খনিজ পদার্থে সমৃদ্ধ।</p>
             <div class="flex justify-between items-center">
               <span class="text-xl font-bold text-amber-700">৳ ১৫০/কেজি</span>
+              <button @click="directOrder(1)" class="bg-gradient-to-r from-amber-500 to-amber-700 text-white p-3 rounded-lg">এখনই অর্ডার করুন</button>
             </div>
           </div>
         </div>
@@ -125,94 +150,74 @@
     </div>
   </section>
   
-  <!-- Customer Reviews Section -->
+  <!-- Customer Reviews Section - Carousel -->
   <section id="reviews" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
+    <div class="container mx-auto md:px-4">
       <h2 class="text-3xl font-bold text-center mb-12 text-amber-800">গ্রাহকদের মতামত</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Review 1 -->
-        <div class="bg-amber-50 p-6 rounded-lg shadow-md">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-amber-200 rounded-full flex items-center justify-center text-amber-800 font-bold text-lg">রা</div>
-            <div class="ml-4">
-              <h3 class="font-semibold text-lg">রাহুল আহমেদ</h3>
-              <div class="flex text-amber-500">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
+      
+      <div class="relative">
+        
+        <!-- Carousel Container -->
+        <div class="relative overflow-hidden rounded-lg">
+          <div class="flex transition-transform duration-500 ease-in-out" :style="`transform: translateX(-${current * 100}%)`">
+            
+            <!-- Slides -->
+            <template x-for="(review, index) in reviews" :key="index">
+              <div class="min-w-full flex-shrink-0 px-4">
+                <div class="bg-amber-50 p-6 rounded-lg shadow-md mx-auto max-w-sm">
+                  <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-amber-200 rounded-full flex items-center justify-center text-amber-800 font-bold text-lg" x-text="review.initial"></div>
+                    <div class="ml-4">
+                      <h3 class="font-semibold text-lg" x-text="review.name"></h3>
+                      <div class="flex text-amber-500">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-gray-700" x-text="review.text"></p>
+                </div>
               </div>
-            </div>
+            </template>
+            
           </div>
-          <p class="text-gray-700">খেজুরের গুড়ের স্বাদ অসাধারণ! সম্পূর্ণ প্রাকৃতিক এবং কোনো কেমিক্যাল ছাড়া। পরিবারের সবাই খুব পছন্দ করেছে। দ্রুত ডেলিভারির জন্য ধন্যবাদ।</p>
         </div>
         
-        <!-- Review 2 -->
-        <div class="bg-amber-50 p-6 rounded-lg shadow-md">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-amber-200 rounded-full flex items-center justify-center text-amber-800 font-bold text-lg">স</div>
-            <div class="ml-4">
-              <h3 class="font-semibold text-lg">সুমাইয়া খাতুন</h3>
-              <div class="flex text-amber-500">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <p class="text-gray-700">আখের গুড়টি খুবই বিশুদ্ধ এবং স্বাস্থ্যকর। শিশুদের জন্য নিঃসন্দেহে চিনির চেয়ে ভালো বিকল্প। নিয়মিত অর্ডার দিচ্ছি এবং সেবায় খুব সন্তুষ্ট।</p>
+        <!-- Navigation Buttons -->
+        <div class="buttons">
+          <button @click="prev()" class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button @click="next()" class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
         
-        <!-- Review 3 -->
-        <div class="bg-amber-50 p-6 rounded-lg shadow-md">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-amber-200 rounded-full flex items-center justify-center text-amber-800 font-bold text-lg">ম</div>
-            <div class="ml-4">
-              <h3 class="font-semibold text-lg">মোহাম্মদ আলী</h3>
-              <div class="flex text-amber-500">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <p class="text-gray-700">দুই ধরনের গুড়ই চেক করে দেখেছি। মান এবং স্বাদ দুটোই excellent। বিশেষ করে পেয়িং on delivery সিস্টেমটা খুবই সুবিধাজনক। সত্যিই বিশ্বস্ত একটি দোকান।</p>
+        <!-- Dots Indicator (Optional) -->
+        <div class="flex justify-center mt-4 space-x-2">
+          <template x-for="(review, index) in reviews" :key="index">
+            <button @click="current = index" :class="`w-3 h-3 rounded-full transition-colors ${current === index ? 'bg-amber-500' : 'bg-gray-300'}`">
+            </button>
+          </template>
         </div>
+        
       </div>
     </div>
   </section>
@@ -352,8 +357,16 @@
                   ❤️ অগ্রিম ১ টাকা ও পেমেন্ট করতে হবে না। প্রোডাক্ট হাতে পাওয়ার পর চেক করে টাকা পরিশোধ করুন ❤️
                 </div>
               </div>
-              <div class="mt-8 text-center">
-                <button type="submit" class="bg-white text-amber-800 px-8 py-3 rounded-lg font-semibold hover:bg-amber-100 transition" x-text="panding ? 'একটু অপেক্ষা করুন' : 'অর্ডার কনফার্ম করুন'"></button>
+              <div class="mt-8 grid place-items-center">
+                <button type="submit" class="flex items-center gap-3 bg-white text-amber-800 px-8 py-3 rounded-lg font-semibold hover:bg-amber-100 transition">
+                  <svg x-show="panding" class="size-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z">
+                      <animateTransform attributeName="transform" type="rotate" dur="0.75s" values="0 12 12;360 12 12" repeatCount="indefinite" />
+                    </path>
+                  </svg>
+                  <span x-show="panding">একটু অপেক্ষা করুন</span>
+                  <span x-show="!panding">অর্ডার কনফার্ম করুন</span>
+                </button>
               </div>
               
             </div>
@@ -428,12 +441,14 @@
           phone: '',
           address: '',
           products: [
-            { id: 0, name: 'খেজুরের গুড়', price: 200, selected: true, quantity: 1 },
-            { id: 1, name: 'আখের গুড়', price: 150, selected: true, quantity: 1 }
+            { id: 0, name: 'খেজুরের গুড়', price: 200, selected: false, quantity: 1 },
+            { id: 1, name: 'আখের গুড়', price: 150, selected: false, quantity: 1 }
           ]
         },
         init() {
-          // Any initialization code if needed
+          setInterval(() => {
+            this.next();
+          }, 5000);
         },
         increaseQuantity(productIndex) {
           this.orderForm.products[productIndex].quantity += 1;
@@ -482,8 +497,8 @@
             phone: '',
             address: '',
             products: [
-              { id: 0, name: 'খেজুরের গুড়', price: 200, selected: true, quantity: 1 },
-              { id: 1, name: 'আখের গুড়', price: 150, selected: true, quantity: 1 }
+              { id: 0, name: 'খেজুরের গুড়', price: 200, selected: false, quantity: 1 },
+              { id: 1, name: 'আখের গুড়', price: 150, selected: false, quantity: 1 }
             ]
           };
         },
@@ -496,7 +511,30 @@
           return this.orderForm.products
             .filter(p => p.selected)
             .reduce((total, product) => total + (product.price * product.quantity), 0) + this.shippingFee;
-        }
+        },
+        directOrder(id) {
+          this.orderForm.products[id].selected = true;
+          window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
+        },
+        current: 0,
+        reviews: [
+        {
+          name: 'রাহুল আহমেদ',
+          initial: 'রা',
+          text: 'খেজুরের গুড়ের স্বাদ অসাধারণ! সম্পূর্ণ প্রাকৃতিক এবং কোনো কেমিক্যাল ছাড়া। পরিবারের সবাই খুব পছন্দ করেছে। দ্রুত ডেলিভারির জন্য ধন্যবাদ।'
+        },
+        {
+          name: 'সুমাইয়া খাতুন',
+          initial: 'স',
+          text: 'আখের গুড়টি খুবই বিশুদ্ধ এবং স্বাস্থ্যকর। শিশুদের জন্য নিঃসন্দেহে চিনির চেয়ে ভালো বিকল্প। নিয়মিত অর্ডার দিচ্ছি এবং সেবায় খুব সন্তুষ্ট।'
+        },
+        {
+          name: 'মোহাম্মদ আলী',
+          initial: 'ম',
+          text: 'দুই ধরনের গুড়ই চেক করে দেখেছি। মান এবং স্বাদ দুটোই excellent। বিশেষ করে পেয়িং on delivery সিস্টেমটা খুবই সুবিধাজনক। সত্যিই বিশ্বস্ত একটি দোকান।'
+        }],
+        next() { this.current = (this.current + 1) % this.reviews.length; },
+        prev() { this.current = (this.current - 1 + this.reviews.length) % this.reviews.length; }
       }))
     })
   </script>
