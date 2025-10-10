@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="প্রাকৃতিক খেজুর ও আখের গুড় - বাংলাদেশের ঐতিহ্যবাহী পদ্ধতিতে তৈরি বিশুদ্ধ ও স্বাস্থ্যকর গুড়।">
+  <meta name="keywords" content="খেজুর গুড়, আখের গুড়, প্রাকৃতিক গুড়, স্বাস্থ্যকর মিষ্টি, বাংলাদেশ গুড়">
   <title>প্রাকৃতিক খেজুর ও আখের গুড় | স্বাদের বিশুদ্ধতা</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap">
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-  <!-- Google Fonts - Bengali -->
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
+  <style type="text/css" media="all">
     body {
       font-family: 'Hind Siliguri', sans-serif;
     }
@@ -19,7 +21,7 @@
     }
     
     .carousel-item {
-      flex: 0 0 calc(100% / 1);
+      flex: 0 0 100%;
     }
     
     @media (min-width: 768px) {
@@ -28,9 +30,7 @@
       }
     }
     
-    /* @animition */
-    
-    .animition {
+    .animate-fade-in {
       animation: anim 1s linear;
     }
     
@@ -40,130 +40,78 @@
       }
       
       to {
-        opacity: 100;
+        opacity: 1;
       }
     }
   </style>
 </head>
 
 <body class="bg-amber-50" x-data="app()">
+  <!-- Navigation -->
   <nav class="bg-gradient-to-r from-amber-500 to-amber-700 text-white sticky top-0 z-50">
     <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-      <div class="flex items-center">
-        <span class="text-xl font-bold">গুড়ের দোকান</span>
-      </div>
-      <div class="flex items-center">
-        <a class="flex items-center gap-2 bg-transparent border-2 border-white text-white px-4 py-3 rounded-lg font-semibold hover:bg-white hover:text-amber-800 transition">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-            <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
-          </svg>
-          <span>
-            01947660563
-          </span>
-        </a>
-      </div>
+      <span class="text-xl font-bold">গুড়ের দোকান</span>
+      <a class="flex items-center gap-2 bg-transparent border-2 border-white text-white px-4 py-2 rounded-lg font-semibold hover:bg-white hover:text-amber-800 transition" href="tel:+8801947660563">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05.9"></path>
+          <path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path>
+        </svg>
+        <span>01947660563</span>
+      </a>
     </div>
   </nav>
+  
   <!-- Hero Section -->
-  <section id="home" class="py-16 bg-gradient-to-r from-amber-500 to-amber-700 text-white">
+  <section id="home" class="py-12 bg-gradient-to-r from-amber-500 to-amber-700 text-white">
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
       <div class="md:w-1/2 mb-8 md:mb-0">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 animition">প্রাকৃতিক খেজুর ও আখের গুড়</h1>
-        <p class="text-xl mb-6 animition">বাংলাদেশের ঐতিহ্যবাহী পদ্ধতিতে তৈরি বিশুদ্ধ ও স্বাস্থ্যকর গুড়। স্বাদের বিশুদ্ধতা নিশ্চিত করুন আপনার পরিবারের জন্য।</p>
-        <div class="flex space-x-4">
-          <a href="#products" class="bg-white text-amber-800 px-6 py-3 rounded-lg font-semibold hover:bg-amber-100 transition">পণ্য দেখুন</a>
-          <a href="#order" class="bg-transparent border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-amber-800 transition">অর্ডার করুন</a>
+        <h1 class="text-3xl md:text-4xl font-bold mb-4 animate-fade-in">প্রাকৃতিক খেজুর ও আখের গুড়</h1>
+        <p class="text-lg mb-6 animate-fade-in">বাংলাদেশের ঐতিহ্যবাহী পদ্ধতিতে তৈরি বিশুদ্ধ ও স্বাস্থ্যকর গুড়।</p>
+        <div class="flex gap-4">
+          <a href="#products" class="bg-white text-amber-800 px-6 py-2 rounded-lg font-semibold hover:bg-amber-100 transition">পণ্য দেখুন</a>
+          <a href="#order" class="bg-transparent border-2 border-white text-white px-6 py-2 rounded-lg font-semibold hover:bg-white hover:text-amber-800 transition">অর্ডার করুন</a>
         </div>
       </div>
       <div class="md:w-1/2 flex justify-center">
-        <div class="bg-white rounded-lg shadow-2xl p-4 max-w-sm">
-          <img loading="lazy" src="/images/1.webp" alt="গুড়" class="rounded-lg w-full md:h-64 object-cover animition">
-        </div>
+        <img loading="lazy" src="/images/1.webp" alt="গুড়" class="rounded-lg shadow-2xl w-full max-w-sm md:h-64 object-cover animate-fade-in">
       </div>
     </div>
   </section>
   
   <!-- Features Section -->
-  <section class="py-16 bg-white">
+  <section class="py-12 bg-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-amber-800">কেন আমাদের গুড় কিনবেন?</h2>
+      <h2 class="text-2xl font-bold text-center mb-8 text-amber-800">কেন আমাদের গুড় কিনবেন?</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div class="bg-amber-50 p-6 rounded-lg shadow-md text-center">
-          <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-            </svg>
+        <template x-for="feature in features" x-key="feature.title">
+          <div class="bg-amber-50 p-6 rounded-lg shadow-md text-center">
+            <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x-bind:d="feature.icon"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2 text-amber-800" x-text="feature.title"></h3>
+            <p class="text-gray-700" x-text="feature.description"></p>
           </div>
-          <h3 class="text-xl font-semibold mb-2 text-amber-800">১০০% প্রাকৃতিক</h3>
-          <p class="text-gray-700">কোনো রাসায়নিক, প্রিজারভেটিভ বা কৃত্রিম উপাদান ছাড়াই সম্পূর্ণ প্রাকৃতিক উপায়ে তৈরি।</p>
-        </div>
-        <div class="bg-amber-50 p-6 rounded-lg shadow-md text-center">
-          <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-amber-800">গুণগত মান নিশ্চিত</h3>
-          <p class="text-gray-700">সর্বোচ্চ মানের কাঁচামাল ব্যবহার করে তৈরি, স্বাস্থ্যকর ও পুষ্টিগুণে ভরপুর।</p>
-        </div>
-        <div class="bg-amber-50 p-6 rounded-lg shadow-md text-center">
-          <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-amber-800">পরিবার পরিচালিত</h3>
-          <p class="text-gray-700">প্রজন্ম ধরে ঐতিহ্যবাহী পদ্ধতিতে গুড় তৈরি করছি, অভিজ্ঞতা ও বিশ্বস্ততা নিশ্চিত।</p>
-        </div>
-        <div class="bg-amber-50 p-6 rounded-lg shadow-md text-center">
-          <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-amber-800">দ্রুত ডেলিভারি</h3>
-          <p class="text-gray-700">অর্ডার করার পর ২৪-৪৮ ঘন্টার মধ্যে ঢাকায় এবং ৩-৫ দিনে সারাদেশে ডেলিভারি।</p>
-        </div>
-        <div class="bg-amber-50 p-6 rounded-lg shadow-md text-center">
-          <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-amber-800">সন্তুষ্টি গ্যারান্টি</h3>
-          <p class="text-gray-700">পণ্য হাতে পেয়ে টাকা দেবার সুযোগ, অসন্তুষ্ট হলে ফেরতের ব্যবস্থা।</p>
-        </div>
-        <div class="bg-amber-50 p-6 rounded-lg shadow-md text-center">
-          <div class="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold mb-2 text-amber-800">সাশ্রয়ী মূল্য</h3>
-          <p class="text-gray-700">সরাসরি উৎপাদনকারী থেকে কেনায় মধ্যবর্তী ব্যবসায়ী ছাড়াই সাশ্রয়ী মূল্যে পণ্য।</p>
-        </div>
+        </template>
       </div>
     </div>
   </section>
   
   <!-- Products Section -->
-  <section id="products" class="py-16 bg-amber-100">
+  <section id="products" class="py-12 bg-amber-100">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-amber-800">আমাদের পণ্য</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
+      <h2 class="text-2xl font-bold text-center mb-8 text-amber-800">আমাদের পণ্য</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <template x-for="(product, index) in products" x-key="index">
           <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-            <img loading="lazy" :src="product.image" alt="" />
-            
-            <div class="p-6">
-              <h3 class="text-2xl font-bold mb-2 text-amber-800" x-text="product.name">আখের গুড়</h3>
+            <img loading="lazy" :src="product.image" :alt="product.name" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="text-xl font-bold mb-2 text-amber-800" x-text="product.name"></h3>
               <p class="text-gray-700 mb-4" x-text="product.description"></p>
               <div class="flex justify-between items-center">
-                <span class="text-xl font-bold text-amber-700" x-text="`৳ ${product.price}`"></span>
-                <button @click="directOrder(index)" class="bg-gradient-to-r from-amber-500 to-amber-700 text-white p-3 rounded-lg">এখনই অর্ডার করুন</button>
+                <span class="text-lg font-bold text-amber-700" x-text="`৳ ${product.price}`"></span>
+                <button @click="directOrder(index)" class="bg-gradient-to-r from-amber-500 to-amber-700 text-white px-4 py-2 rounded-lg">এখনই অর্ডার করুন</button>
               </div>
             </div>
           </div>
@@ -172,18 +120,13 @@
     </div>
   </section>
   
-  <!-- Customer Reviews Section - Carousel -->
-  <section id="reviews" class="py-16 bg-white">
-    <div class="container mx-auto md:px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-amber-800">গ্রাহকদের মতামত</h2>
-      
+  <!-- Reviews Section -->
+  <section id="reviews" class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center mb-8 text-amber-800">গ্রাহকদের মতামত</h2>
       <div class="relative">
-        
-        <!-- Carousel Container -->
-        <div class="relative overflow-hidden rounded-lg">
+        <div class="overflow-hidden rounded-lg">
           <div class="flex transition-transform duration-500 ease-in-out" :style="`transform: translateX(-${current * 100}%)`">
-            
-            <!-- Slides -->
             <template x-for="(review, index) in reviews" :key="index">
               <div class="min-w-full flex-shrink-0 px-4">
                 <div class="bg-amber-50 p-6 rounded-lg shadow-md mx-auto max-w-sm">
@@ -192,9 +135,9 @@
                     <div class="ml-4">
                       <h3 class="font-semibold text-lg" x-text="review.name"></h3>
                       <div class="flex text-amber-500">
-                        <template x-for="rating in review.rating">
+                        <template x-for="i in review.rating">
                           <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path>
                           </svg>
                         </template>
                       </div>
@@ -204,267 +147,168 @@
                 </div>
               </div>
             </template>
-            
           </div>
         </div>
-        
-        <!-- Navigation Buttons -->
-        <div class="buttons">
-          <button @click="prev()" class="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition-colors">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button @click="next()" class="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition-colors">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
-        
-        <!-- Dots Indicator (Optional) -->
-        <div class="flex justify-center mt-4 space-x-2">
+        <button @click="prev()" class="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <button @click="next()" class="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-amber-500 text-white rounded-full hover:bg-amber-600 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+        <div class="flex justify-center mt-4 gap-2">
           <template x-for="(review, index) in reviews" :key="index">
-            <button @click="current = index" :class="`w-3 h-3 rounded-full transition-colors ${current === index ? 'bg-amber-500' : 'bg-gray-300'}`">
-            </button>
+            <button @click="current = index" :class="`w-3 h-3 rounded-full transition ${current === index ? 'bg-amber-500' : 'bg-gray-300'}`"></button>
           </template>
         </div>
-        
       </div>
     </div>
   </section>
   
   <!-- About Section -->
-  <section id="about" class="py-16 bg-white">
+  <section id="about" class="py-12 bg-white">
     <div class="container mx-auto px-4">
       <div class="flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 mb-8 md:mb-0">
           <img loading="lazy" src="/images/1.webp" alt="গুড় তৈরি" class="rounded-lg shadow-lg w-full">
         </div>
-        <div class="md:w-1/2 md:pl-12">
-          <h2 class="text-3xl font-bold mb-6 text-amber-800">আমাদের গল্প</h2>
-          <p class="text-gray-700 mb-4">আমরা বাংলাদেশের ঐতিহ্যবাহী গুড় প্রস্তুতকারক পরিবার। প্রজন্ম ধরে আমরা প্রাকৃতিক উপায়ে খেজুর ও আখের গুড় তৈরি করে আসছি।</p>
-          <p class="text-gray-700 mb-4">আমাদের গুড় তৈরিতে কোনো রাসায়নিক বা কৃত্রিম উপাদান ব্যবহার করা হয় না। সম্পূর্ণ প্রাকৃতিক উপায়ে তৈরি আমাদের গুড় স্বাস্থ্যের জন্য অত্যন্ত উপকারী এবং এর স্বাদ অতুলনীয়।</p>
-          <p class="text-gray-700">আমাদের লক্ষ্য হলো শহুরে জীবনযাপনে ব্যস্ত মানুষদের কাছে পৌঁছে দেয়া গ্রাম বাংলার ঐতিহ্যবাহী এই স্বাস্থ্যকর মিষ্টান্ন।</p>
+        <div class="md:w-1/2 md:pl-8">
+          <h2 class="text-2xl font-bold mb-4 text-amber-800">আমাদের গল্প</h2>
+          <p class="text-gray-700 mb-4">আমরা বাংলাদেশের ঐতিহ্যবাহী গুড় প্রস্তুতকারক পরিবার। প্রজন্ম ধরে প্রাকৃতিক উপায়ে খেজুর ও আখের গুড় তৈরি করে আসছি।</p>
+          <p class="text-gray-700 mb-4">আমাদের গুড় সম্পূর্ণ প্রাকৃতিক, কোনো রাসায়নিক বা কৃত্রিম উপাদান ছাড়াই তৈরি।</p>
+          <p class="text-gray-700">আমাদের লক্ষ্য গ্রাম বাংলার ঐতিহ্যবাহী স্বাস্থ্যকর মিষ্টান্ন শহুরে জীবনে পৌঁছে দেওয়া।</p>
         </div>
       </div>
     </div>
   </section>
   
-  
   <!-- FAQ Section -->
-  <section id="faq" class="py-16 bg-amber-100">
+  <section id="faq" class="py-12 bg-amber-100">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-amber-800">সচরাচর জিজ্ঞাসিত প্রশ্ন</h2>
+      <h2 class="text-2xl font-bold text-center mb-8 text-amber-800">সচরাচর জিজ্ঞাসিত প্রশ্ন</h2>
       <div class="max-w-4xl mx-auto">
-        <!-- FAQ 1 -->
-        <div class="bg-white rounded-lg shadow-md mb-4" x-data="{ open: false }">
-          <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-amber-50 transition rounded-lg" @click="open = !open">
-            <span class="font-semibold text-amber-800">গুড় কতদিন পর্যন্ত সংরক্ষণ করা যায়?</span>
-            <svg class="w-5 h-5 text-amber-600 transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="px-6 pb-4" x-show="open" x-transition>
-            <p class="text-gray-700">গুড় একটি বায়ুরোধী পাত্রে সংরক্ষণ করলে ৬ মাস থেকে ১ বছর পর্যন্ত ভালো থাকে। শুষ্ক ও ঠান্ডা জায়গায় রাখুন এবং সরাসরি সূর্যালোক থেকে দূরে রাখুন।</p>
+        <template x-for="faq in faqs" x-key="faq.question">
+          <div class="bg-white rounded-lg shadow-md mb-4" x-data="{ open: false }">
+            <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-amber-50 transition rounded-lg" @click="open = !open">
+              <span class="font-semibold text-amber-800" x-text="faq.question"></span>
+              <svg class="w-5 h-5 text-amber-600 transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="px-6 pb-4" x-show="open" x-transition>
+              <p class="text-gray-700" x-text="faq.answer"></p>
+            </div>
           </div>
-        </div>
-        
-        <!-- FAQ 2 -->
-        <div class="bg-white rounded-lg shadow-md mb-4" x-data="{ open: false }">
-          <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-amber-50 transition rounded-lg" @click="open = !open">
-            <span class="font-semibold text-amber-800">ডেলিভারি চার্জ কত?</span>
-            <svg class="w-5 h-5 text-amber-600 transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="px-6 pb-4" x-show="open" x-transition>
-            <p class="text-gray-700">ঢাকা শহরের মধ্যে ডেলিভারি চার্জ ৬০ টাকা। ঢাকার বাইরে জেলা ভেদে ১০০-১৫০ টাকা। ৫ কেজির বেশি অর্ডারে ডেলিভারি চার্জ ফ্রী।</p>
-          </div>
-        </div>
-        
-        <!-- FAQ 3 -->
-        <div class="bg-white rounded-lg shadow-md mb-4" x-data="{ open: false }">
-          <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-amber-50 transition rounded-lg" @click="open = !open">
-            <span class="font-semibold text-amber-800">কোনো প্রিজারভেটিভ ব্যবহার করা হয় কি?</span>
-            <svg class="w-5 h-5 text-amber-600 transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="px-6 pb-4" x-show="open" x-transition>
-            <p class="text-gray-700">না, আমাদের গুড়ে কোনো প্রিজারভেটিভ, রং বা কেমিক্যাল ব্যবহার করা হয় না। সম্পূর্ণ প্রাকৃতিক উপায়ে তৈরি করা হয় বলে এটি স্বাস্থ্যের জন্য সম্পূর্ণ নিরাপদ।</p>
-          </div>
-        </div>
-        
-        <!-- FAQ 4 -->
-        <div class="bg-white rounded-lg shadow-md mb-4" x-data="{ open: false }">
-          <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-amber-50 transition rounded-lg" @click="open = !open">
-            <span class="font-semibold text-amber-800">অর্ডার করার পর কতদিনে ডেলিভারি পাব?</span>
-            <svg class="w-5 h-5 text-amber-600 transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="px-6 pb-4" x-show="open" x-transition>
-            <p class="text-gray-700">ঢাকা শহরের মধ্যে ২৪-৪৮ ঘন্টার মধ্যে ডেলিভারি দেওয়া হয়। ঢাকার বাইরে ৩-৫ কার্যদিবসের মধ্যে ডেলিভারি করা হয়। অর্ডার কনফার্ম হওয়ার পর আমাদের প্রতিনিধি আপনার সাথে যোগাযোগ করবে।</p>
-          </div>
-        </div>
-        
-        <!-- FAQ 5 -->
-        <div class="bg-white rounded-lg shadow-md mb-4" x-data="{ open: false }">
-          <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-amber-50 transition rounded-lg" @click="open = !open">
-            <span class="font-semibold text-amber-800">পণ্য হাতে পেয়ে অসন্তুষ্ট হলে কি করব?</span>
-            <svg class="w-5 h-5 text-amber-600 transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="px-6 pb-4" x-show="open" x-transition>
-            <p class="text-gray-700">আমাদের "হাতে পেয়ে পেমেন্ট" সিস্টেম রয়েছে। পণ্য হাতে পাওয়ার পর যদি কোনো সমস্যা থাকে বা অসন্তুষ্ট হন, তাহলে আপনি পেমেন্ট না করেই পণ্য ফেরত দিতে পারেন। কোনো প্রশ্ন থাকলে 01947660563 নম্বরে কল করুন।</p>
-          </div>
-        </div>
-        
-        <!-- FAQ 6 -->
-        <div class="bg-white rounded-lg shadow-md mb-4" x-data="{ open: false }">
-          <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-amber-50 transition rounded-lg" @click="open = !open">
-            <span class="font-semibold text-amber-800">খেজুরের গুড় ও আখের গুড়ের মধ্যে পার্থক্য কি?</span>
-            <svg class="w-5 h-5 text-amber-600 transition-transform" :class="{ 'rotate-180': open }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div class="px-6 pb-4" x-show="open" x-transition>
-            <p class="text-gray-700">খেজুরের গুড়ে বেশি মিষ্টি স্বাদ এবং সমৃদ্ধ গন্ধ থাকে, এতে আয়রন, ক্যালসিয়াম ও পটাসিয়াম বেশি থাকে। আখের গুড় হালকা মিষ্টি এবং হালকা রং এর হয়, এতে গ্লুকোজ ও ফ্রুক্টোজের পরিমাণ বেশি। দুটোই স্বাস্থ্যের জন্য উপকারী।</p>
-          </div>
-        </div>
+        </template>
       </div>
     </div>
   </section>
   
   <!-- Order Section -->
-  <section id="order" class="py-16 bg-amber-800 text-white">
+  <section id="order" class="py-12 bg-amber-800 text-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">অর্ডার করুন</h2>
-      <div class="bg-amber-700 p-4 rounded-lg shadow-lg">
-        <form @submit.prevent="submitOrder">
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label class="block mb-2">আপনার নাম</label>
-                  <input type="text" x-model="orderForm.name" class="w-full px-4 py-2 rounded-lg bg-amber-600 border border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder:text-white" placeholder="আপনার পুরো নাম" required>
-                </div>
-                <div>
-                  <label class="block mb-2">ফোন নম্বর</label>
-                  <input type="tel" x-model="orderForm.phone" class="w-full px-4 py-2 rounded-lg bg-amber-600 border border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder:text-white" placeholder="আপনার ফোন নম্বর" required>
-                </div>
-                <div class="md:col-span-2">
-                  <label class="block mb-2">আপনার জেলা</label>
-                  <select @change="getDeliveryCharge(orderForm.district)" x-model="orderForm.district" class="w-full px-4 py-2 rounded-lg bg-amber-600 border border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder:text-white" required>
-                    <option value="">জেলা নির্বাচন করুন</option>
-                    <template x-for="district in districts" x-key="district">
-                      <option :value="district" x-text="district"></option>
-                    </template>
-                  </select>
-                </div>
-                <div class="md:col-span-2">
-                  <label class="block mb-2">ঠিকানা</label>
-                  <textarea x-model="orderForm.address" class="w-full px-4 py-2 rounded-lg bg-amber-600 border border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder:text-white" rows="3" placeholder="সম্পূর্ণ ডেলিভারি ঠিকানা" required></textarea>
-                </div>
-                <div class="md:col-span-2">
-                  <label class="block mb-2">আপনার মন্তব্য (অতিরিক্ত)</label>
-                  <textarea x-model="orderForm.address" class="w-full px-4 py-2 rounded-lg bg-amber-600 border border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder:text-white" rows="3" placeholder="আপনার মন্তব্য" required></textarea>
-                </div>
-              </div>
-              
-              <!-- Product Selection -->
-              <div class="mt-8">
-                <h3 class="text-xl font-bold mb-4">আপনার প্রোডাক্ট</h3>
-                <template x-for="(product,index) in products" x-key="index">
-                  <div class="bg-amber-600 p-4 rounded-lg mb-4">
-                    <div class="flex items-center justify-between">
-                      <div class="flex items-center">
-                        <input type="checkbox" x-model="orderForm.products[index].selected" class="w-4 h-4 text-amber-600 rounded focus:ring-amber-500">
-                        <label class="ml-3 font-semibold" x-text="`${product.name} - ৳ ${product.price}`"></label>
-                      </div>
-                    </div>
-                    
-                    <div x-show="orderForm.products[index].selected" class="mt-3">
-                      <div class="flex items-center">
-                        <label class="mr-4">পরিমাণ:</label>
-                        <button type="button" @click="decreaseQuantity(index)" class="bg-amber-500 text-white w-8 h-8 rounded-full flex items-center justify-center">-</button>
-                        <span class="mx-3 font-bold" x-text="orderForm.products[index].quantity"></span>
-                        <button type="button" @click="increaseQuantity(index)" class="bg-amber-500 text-white w-8 h-8 rounded-full flex items-center justify-center">+</button>
-                        <span class="ml-4 font-semibold" x-text="'মূল্য: ৳ ' + (orderForm.products[index].quantity * product.price)"></span>
-                      </div>
-                    </div>
-                  </div>
-                </template>
-              </div>
-            </div>
-            
-            <div>
-              <h3 class="text-xl font-bold mb-2">আপনার অর্ডার</h3>
-              <div class="mt-2 py-2 border-y border-amber-500">
-                <div class="flex justify-between items-center">
-                  <div class="text-md font-bold">প্রোডাক্ট</div>
-                  <div class="text-md font-bold">সাবটোটাল</div>
-                </div>
+      <h2 class="text-2xl font-bold text-center mb-8">অর্ডার করুন</h2>
+      <form @submit.prevent="submitOrder" class="bg-amber-700 p-4 rounded-lg shadow-lg">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label class="block mb-2">আপনার নাম</label>
+                <input type="text" x-model="orderForm.name" class="w-full px-4 py-2 rounded-lg bg-amber-600 border border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder:text-white" placeholder="আপনার পুরো নাম" required>
               </div>
               <div>
-                <div class="mt-2 text-center" x-show="!orderForm.products.filter(p => p.selected).length">পণ্য নির্বাচন করুন</div>
-                <template x-for="product in orderForm.products.filter(p => p.selected)">
-                  <div class="mt-3 pt-2">
-                    <div class="flex justify-between items-center">
-                      <div class="flex items-center gap-2">
-                        <img loading="lazy" class="size-10 rounded" :src="product.image" alt="">
-                        <div class="text-md" x-text="product.name">প্রোডাক্ট</div>
-                      </div>
-                      <div class="text-md" x-text="'×' + product.quantity">সাবটোটাল</div>
-                      <div class="text-md" x-text="'৳' + product.price">সাবটোটাল</div>
+                <label class="block mb-2">ফোন নম্বর</label>
+                <input type="tel" x-model="orderForm.phone" class="w-full px-4 py-2 rounded-lg bg-amber-600 border border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder:text-white" placeholder="আপনার ফোন নম্বর" required>
+              </div>
+              <div class="md:col-span-2">
+                <label class="block mb-2">আপনার জেলা</label>
+                <select x-model="orderForm.district" @change="getDeliveryCharge(orderForm.district)" class="w-full px-4 py-2 rounded-lg bg-amber-600 border border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder:text-white" required>
+                  <option value="">জেলা নির্বাচন করুন</option>
+                  <template x-for="district in districts" x-key="district">
+                    <option :value="district" x-text="district"></option>
+                  </template>
+                </select>
+              </div>
+              <div class="md:col-span-2">
+                <label class="block mb-2">ঠিকানা</label>
+                <textarea x-model="orderForm.address" class="w-full px-4 py-2 rounded-lg bg-amber-600 border border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder:text-white" rows="3" placeholder="সম্পূর্ণ ডেলিভারি ঠিকানা" required></textarea>
+              </div>
+              <div class="md:col-span-2">
+                <label class="block mb-2">আপনার মন্তব্য</label>
+                <textarea x-model="orderForm.comment" class="w-full px-4 py-2 rounded-lg bg-amber-600 border border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-400 placeholder:text-white" rows="3" placeholder="আপনার মন্তব্য"></textarea>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h3 class="text-lg font-bold mb-4">আপনার প্রোডাক্ট</h3>
+              <template x-for="(product, index) in products" x-key="index">
+                <div class="bg-amber-600 p-4 rounded-lg mb-4">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                      <input type="checkbox" x-model="orderForm.products[index].selected" class="w-4 h-4 text-amber-600 rounded focus:ring-amber-500">
+                      <label class="ml-3 font-semibold" x-text="`${product.name} - ৳ ${product.price}`"></label>
                     </div>
                   </div>
-                </template>
-              </div>
-              <!-- Order Summary -->
-              <div class="mt-2 pt-2 border-t border-amber-500">
-                <div class="flex justify-between items-center">
-                  <div class="text-md font-bold">সাবটোটাল:</div>
-                  <div class="text-md font-bold" x-text="'৳ ' + subtotalPrice"></div>
+                  <div x-show="orderForm.products[index].selected" class="mt-3 flex items-center gap-4">
+                    <label>পরিমাণ:</label>
+                    <button type="button" @click="decreaseQuantity(index)" class="bg-amber-500 text-white w-8 h-8 rounded-full flex items-center justify-center">-</button>
+                    <span class="font-bold" x-text="orderForm.products[index].quantity"></span>
+                    <button type="button" @click="increaseQuantity(index)" class="bg-amber-500 text-white w-8 h-8 rounded-full flex items-center justify-center">+</button>
+                    <span class="font-semibold" x-text="'মূল্য: ৳ ' + (orderForm.products[index].quantity * product.price)"></span>
+                  </div>
                 </div>
-              </div>
-              <div class="mt-2 pt-2 border-t border-amber-500">
-                <div class="flex justify-between items-center">
-                  <div class="text-md font-bold">ডেলিভারি চার্জ:</div>
-                  <div class="text-md font-bold" x-text="'৳ ' + shippingFee"></div>
-                </div>
-              </div>
-              <div class="mt-2 pt-2 border-t border-amber-500">
-                <div class="flex justify-between items-center">
-                  <div class="text-md font-bold">মোট মূল্য:</div>
-                  <div class="text-md font-bold" x-text="'৳ ' + totalPrice"></div>
-                </div>
-              </div>
-              <div class="text-center mt-4">
-                <h4>প্রডাক্ট হাতে পেয়ে টাকা পরিশোধ করার সুযোগ।</h4>
-                <div class="mt-2 bg-amber-50 text-amber-800 p-3 rounded-md">
-                  ❤️ অগ্রিম ১ টাকা ও পেমেন্ট করতে হবে না। প্রোডাক্ট হাতে পাওয়ার পর চেক করে টাকা পরিশোধ করুন ❤️
-                </div>
-              </div>
-              <div class="mt-8 grid place-items-center">
-                <button type="submit" class="flex items-center gap-3 bg-white text-amber-800 px-8 py-3 rounded-lg font-semibold hover:bg-amber-100 transition">
-                  <svg x-show="panding" class="size-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z">
-                      <animateTransform attributeName="transform" type="rotate" dur="0.75s" values="0 12 12;360 12 12" repeatCount="indefinite" />
-                    </path>
-                  </svg>
-                  <span x-show="panding">একটু অপেক্ষা করুন</span>
-                  <span x-show="!panding">অর্ডার কনফার্ম করুন</span>
-                </button>
-              </div>
-              
+              </template>
             </div>
           </div>
-        </form>
-      </div>
+          <div>
+            <h3 class="text-lg font-bold mb-2">আপনার অর্ডার</h3>
+            <div class="mt-2 py-2 border-y border-amber-500 flex justify-between font-bold">
+              <span>প্রোডাক্ট</span>
+              <span>সাবটোটাল</span>
+            </div>
+            <div x-show="!orderForm.products.filter(p => p.selected).length" class="mt-2 text-center">পণ্য নির্বাচন করুন</div>
+            <template x-for="product in orderForm.products.filter(p => p.selected)">
+              <div class="mt-2 flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                  <img loading="lazy" class="w-10 h-10 rounded" :src="product.image" :alt="product.name">
+                  <span x-text="product.name"></span>
+                </div>
+                <span x-text="'×' + product.quantity"></span>
+                <span x-text="'৳' + (product.quantity * product.price)"></span>
+              </div>
+            </template>
+            <div class="mt-2 pt-2 border-t border-amber-500 flex justify-between font-bold">
+              <span>সাবটোটাল:</span>
+              <span x-text="'৳ ' + subtotalPrice"></span>
+            </div>
+            <div class="mt-2 pt-2 border-t border-amber-500 flex justify-between font-bold">
+              <span>ডেলিভারি চার্জ:</span>
+              <span x-text="'৳ ' + shippingFee"></span>
+            </div>
+            <div class="mt-2 pt-2 border-t border-amber-500 flex justify-between font-bold">
+              <span>মোট মূল্য:</span>
+              <span x-text="'৳ ' + totalPrice"></span>
+            </div>
+            <div class="mt-4 text-center">
+              <p>প্রডাক্ট হাতে পেয়ে টাকা পরিশোধ করার সুযোগ।</p>
+              <div class="mt-2 bg-amber-50 text-amber-800 p-3 rounded-md">❤️ অগ্রিম পেমেন্ট নেই। প্রোডাক্ট চেক করে টাকা পরিশোধ করুন ❤️</div>
+            </div>
+            <div class="mt-6 text-center">
+              <button type="submit" class="flex items-center gap-3 bg-white text-amber-800 px-6 py-2 rounded-lg font-semibold hover:bg-amber-100 transition">
+                <svg x-show="panding" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12,4a8,8,0,0,1,7.89,6.7A1.53,1.53,0,0,0,21.38,12h0a1.5,1.5,0,0,0,1.48-1.75,11,11,0,0,0-21.72,0A1.5,1.5,0,0,0,2.62,12h0a1.53,1.53,0,0,0,1.49-1.3A8,8,0,0,1,12,4Z">
+                    <animateTransform attributeName="transform" type="rotate" dur="0.75s" values="0 12 12;360 12 12" repeatCount="indefinite" />
+                  </path>
+                </svg>
+                <span x-show="panding">একটু অপেক্ষা করুন</span>
+                <span x-show="!panding">অর্ডার কনফার্ম করুন</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </section>
   
@@ -473,213 +317,152 @@
     <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
       <div class="text-center">
         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
           </svg>
         </div>
-        <h3 class="text-xl font-bold text-gray-800 mb-2">অর্ডার সফল হয়েছে!</h3>
-        <p class="text-gray-600 mb-6">আপনার অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে। শীঘ্রই আমাদের প্রতিনিধি আপনার সাথে যোগাযোগ করবে।</p>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">অর্ডার সফল!</h3>
+        <p class="text-gray-600 mb-6">আপনার অর্ডার সফলভাবে গ্রহণ করা হয়েছে। শীঘ্রই আমাদের প্রতিনিধি যোগাযোগ করবে।</p>
         <button @click="showSuccessModal = false; resetForm();" class="bg-amber-600 text-white px-6 py-2 rounded-lg hover:bg-amber-700 transition">ঠিক আছে</button>
       </div>
     </div>
   </div>
   
   <!-- Footer -->
-  <footer class="bg-amber-900 text-white py-8">
+  <footer class="bg-amber-900 text-white py-6">
     <div class="container mx-auto px-4">
       <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-4 md:mb-0 text-center">
-          <h3 class="text-xl font-bold">গুড়ের দোকান</h3>
+        <div class="text-center mb-4 md:mb-0">
+          <h3 class="text-lg font-bold">গুড়ের দোকান</h3>
           <p class="mt-2">প্রাকৃতিক খেজুর ও আখের গুড়</p>
         </div>
-        <div class="flex space-x-6">
+        <div class="flex gap-6">
           <a href="#" class="hover:text-amber-300 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-facebook">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 10v4h3v7h4v-7h3l1-4h-4v-2a1 1 0 0 1 1-1h3v-4h-3a5 5 0 0 0-5 5v2h-3"></path>
             </svg>
           </a>
-          <a href="https://wa.me/017XXXXXXXX" class="hover:text-amber-300 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-              <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+          <a href="https://wa.me/8801947660563" class="hover:text-amber-300 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9l-5.05.9"></path>
+              <path d="M9 10a.5.5 0 0 0 1 0v-1a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path>
             </svg>
           </a>
-          <a href="tel:017XXXXXXXX" class="hover:text-amber-300 transition">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-phone">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+          <a href="tel:+8801947660563" class="hover:text-amber-300 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5-2.5l5 2v4a2 2 0 0 1-2 2a16 16 0 0 1-15-15a2 2 0 0 1 2-2"></path>
             </svg>
           </a>
         </div>
       </div>
-      <div class="border-t border-amber-700 mt-8 pt-6 text-center text-sm">
+      <div class="border-t border-amber-700 mt-6 pt-4 text-center text-sm">
         <p>© 2025 গুড়ের দোকান। সকল অধিকার সংরক্ষিত।</p>
       </div>
     </div>
   </footer>
-  
-  <!-- Alpine.js Component -->
   <script>
     document.addEventListener('alpine:init', () => {
-      
       const districts = [
-        // খুলনা বিভাগ
-        "চুয়াডাঙ্গা",
-        "ঝিনাইদহ",
-        "কুষ্টিয়া",
-        "মেহেরপুর",
-        "মাগুরা",
-        "খুলনা",
-        "বাগেরহাট",
-        "যশোর",
-        "নড়াইল",
-        "সাতক্ষীরা",
-        // ঢাকা বিভাগ
-        "ঢাকা",
-        "ফরিদপুর",
-        "গাজীপুর",
-        "গোপালগঞ্জ",
-        "কিশোরগঞ্জ",
-        "মাদারীপুর",
-        "মানিকগঞ্জ",
-        "মুন্সীগঞ্জ",
-        "নারায়ণগঞ্জ",
-        "নরসিংদী",
-        "রাজবাড়ী",
-        "শরীয়তপুর",
-        "টাঙ্গাইল",
-        
-        // চট্টগ্রাম বিভাগ
-        "বান্দরবান",
-        "ব্রাহ্মণবাড়িয়া",
-        "চাঁদপুর",
-        "চট্টগ্রাম",
-        "কক্সবাজার",
-        "কুমিল্লা",
-        "ফেনী",
-        "খাগড়াছড়ি",
-        "লক্ষ্মীপুর",
-        "নোয়াখালী",
-        "রাঙ্গামাটি",
-        
-        // রাজশাহী বিভাগ
-        "বগুড়া",
-        "জয়পুরহাট",
-        "নওগাঁ",
-        "নাটোর",
-        "চাঁপাইনবাবগঞ্জ",
-        "পাবনা",
-        "রাজশাহী",
-        "সিরাজগঞ্জ",
-        
-        // বরিশাল বিভাগ
-        "বরগুনা",
-        "বরিশাল",
-        "ভোলা",
-        "ঝালকাঠি",
-        "পটুয়াখালী",
-        "পিরোজপুর",
-        
-        // সিলেট বিভাগ
-        "হবিগঞ্জ",
-        "মৌলভীবাজার",
-        "সিলেট",
-        "সুনামগঞ্জ",
-        
-        // রংপুর বিভাগ
-        "দিনাজপুর",
-        "গাইবান্ধা",
-        "কুড়িগ্রাম",
-        "লালমনিরহাট",
-        "নীলফামারী",
-        "পঞ্চগড়",
-        "রংপুর",
-        "ঠাকুরগাঁও",
-        
-        // ময়মনসিংহ বিভাগ
-        "জামালপুর",
-        "ময়মনসিংহ",
-        "নেত্রকোনা",
-        "শেরপুর"
+        'চুয়াডাঙ্গা', 'ঝিনাইদহ', 'কুষ্টিয়া', 'মেহেরপুর', 'মাগুরা', 'খুলনা', 'বাগেরহাট', 'যশোর', 'নড়াইল', 'সাতক্ষীরা',
+        'ঢাকা', 'ফরিদপুর', 'গাজীপুর', 'গোপালগঞ্জ', 'কিশোরগঞ্জ', 'মাদারীপুর', 'মানিকগঞ্জ', 'মুন্সীগঞ্জ', 'নারায়ণগঞ্জ', 'নরসিংদী', 'রাজবাড়ী', 'শরীয়তপুর', 'টাঙ্গাইল',
+        'বান্দরবান', 'ব্রাহ্মণবাড়িয়া', 'চাঁদপুর', 'চট্টগ্রাম', 'কক্সবাজার', 'কুমিল্লা', 'ফেনী', 'খাগড়াছড়ি', 'লক্ষ্মীপুর', 'নোয়াখালী', 'রাঙ্গামাটি',
+        'বগুড়া', 'জয়পুরহাট', 'নওগাঁ', 'নাটোর', 'চাঁপাইনবাবগঞ্জ', 'পাবনা', 'রাজশাহী', 'সিরাজগঞ্জ',
+        'বরগুনা', 'বরিশাল', 'ভোলা', 'ঝালকাঠি', 'পটুয়াখালী', 'পিরোজপুর',
+        'হবিগঞ্জ', 'মৌলভীবাজার', 'সিলেট', 'সুনামগঞ্জ',
+        'দিনাজপুর', 'গাইবান্ধা', 'কুড়িগ্রাম', 'লালমনিরহাট', 'নীলফামারী', 'পঞ্চগড়', 'রংপুর', 'ঠাকুরগাঁও',
+        'জামালপুর', 'ময়মনসিংহ', 'নেত্রকোনা', 'শেরপুর'
       ];
       
       
       Alpine.data('app', () => ({
-        openMenu: false,
-        panding: false,
+        api: 'https://68e84d0af2707e6128ca6a30.mockapi.io/api/v1',
+        current: 0,
         shippingFee: 0,
-        showSuccessModal: false,
-        districts: districts,
+        reviews: [],
         products: [],
+        deliveries: [],
+        showSuccessModal: false,
+        panding: false,
+        districts,
+        features: [],
+        faqs: [],
         orderForm: {
           name: '',
           phone: '',
           district: '',
           address: '',
-          products: []
+          comment: '',
+          products: [],
         },
-        init() {
-          this.loader()
-          setInterval(() => {
-            this.next();
-          }, 5000);
-        },
-        async loader() {
-          let ress = await fetch('/src/landing.json');
-          let data = await ress.json();
-          this.products = data.products;
-          this.orderForm.products = this.products.map(product => ({
-            ...product,
-            selected: false,
-            quantity: 1
-          }))
-        },
-        increaseQuantity(productIndex) {
-          this.orderForm.products[productIndex].quantity += 1;
-        },
-        decreaseQuantity(productIndex) {
-          if (this.orderForm.products[productIndex].quantity > 1) {
-            this.orderForm.products[productIndex].quantity -= 1;
+        async init() {
+          try {
+            const res = await fetch(`${this.api}/landing`);
+            const data = await res.json();
+            this.products = data[0].products;
+            this.reviews = data[1].reviews;
+            this.deliveries = data[2];
+            this.features = data[3].features;
+            this.faqs = data[4].faqs;
+            this.orderForm.products = this.products.map(product => ({
+              ...product,
+              selected: false,
+              quantity: 1,
+            }));
+          } catch (error) {
+            console.error('Failed to load data:', error);
           }
         },
-        submitOrder() {
-          // Check if at least one product is selected
+        increaseQuantity(index) {
+          this.orderForm.products[index].quantity += 1;
+        },
+        decreaseQuantity(index) {
+          if (this.orderForm.products[index].quantity > 1) {
+            this.orderForm.products[index].quantity -= 1;
+          }
+        },
+        async submitOrder() {
           const selectedProducts = this.orderForm.products.filter(p => p.selected);
-          if (selectedProducts.length === 0) {
+          if (!selectedProducts.length) {
             alert('অনুগ্রহ করে কমপক্ষে একটি পণ্য নির্বাচন করুন।');
             return;
           }
-          this.panding = true;
-          setTimeout(() => {
-            const orderData = {
-              id: crypto.randomUUID(),
-              customer: {
-                name: this.orderForm.name,
-                phone: this.orderForm.phone,
-                district: this.orderForm.district,
-                address: this.orderForm.address
-              },
-              items: selectedProducts.map(p => ({
-                name: p.name,
-                quantity: p.quantity,
-                price: p.price,
-                image: p.image,
-                total: p.price * p.quantity
-              })),
-              total: this.totalPrice,
-              date: new Date().toLocaleString(),
-              status: 'pending'
-            };
-            
-            console.log('Order submitted:', orderData);
-            
-            // Show success modal
+          if (!this.orderForm.name || !this.orderForm.phone || !this.orderForm.district || !this.orderForm.address) {
+            alert('অনুগ্রহ করে সব প্রয়োজনীয় তথ্য পূরণ করুন।');
+            return;
+          }
+          try {
+            this.panding = true;
+            await fetch(`${this.api}/orders`, {
+              method: 'POST',
+              headers: { 'content-type': 'application/json' },
+              body: JSON.stringify({
+                id: crypto.randomUUID(),
+                customer: {
+                  name: this.orderForm.name,
+                  phone: this.orderForm.phone,
+                  district: this.orderForm.district,
+                  address: this.orderForm.address,
+                  comment: this.orderForm.comment,
+                },
+                items: selectedProducts.map(p => ({
+                  name: p.name,
+                  quantity: p.quantity,
+                  price: p.price,
+                  image: p.image,
+                  total: p.price * p.quantity,
+                })),
+                total: this.totalPrice,
+                date: new Date().toLocaleString(),
+                status: 'pending',
+              }),
+            });
             this.showSuccessModal = true;
+          } catch (error) {
+            console.error('Order submission failed:', error);
+            alert('অর্ডার জমা দিতে সমস্যা হয়েছে। আবার চেষ্টা করুন।');
+          } finally {
             this.panding = false;
-          }, 3000)
-          
+          }
         },
         resetForm() {
           this.orderForm = {
@@ -687,12 +470,27 @@
             phone: '',
             district: '',
             address: '',
+            comment: '',
             products: this.products.map(product => ({
               ...product,
               selected: false,
-              quantity: 1
-            }))
+              quantity: 1,
+            })),
           };
+          this.shippingFee = 0;
+        },
+        getDeliveryCharge(district) {
+          this.shippingFee = this.deliveries[district] || 100;
+        },
+        directOrder(index) {
+          this.orderForm.products[index].selected = true;
+          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        },
+        next() {
+          this.current = (this.current + 1) % this.reviews.length;
+        },
+        prev() {
+          this.current = (this.current - 1 + this.reviews.length) % this.reviews.length;
         },
         get subtotalPrice() {
           return this.orderForm.products
@@ -700,53 +498,10 @@
             .reduce((total, product) => total + (product.price * product.quantity), 0);
         },
         get totalPrice() {
-          return this.orderForm.products
-            .filter(p => p.selected)
-            .reduce((total, product) => total + (product.price * product.quantity), 0) + this.shippingFee;
+          return this.subtotalPrice + this.shippingFee;
         },
-        directOrder(id) {
-          this.orderForm.products[id].selected = true;
-          window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
-        },
-        current: 0,
-        reviews: [
-        {
-          id: 1,
-          name: 'রাহুল আহমেদ',
-          text: 'খেজুরের গুড়ের স্বাদ অসাধারণ! সম্পূর্ণ প্রাকৃতিক এবং কোনো কেমিক্যাল ছাড়া। পরিবারের সবাই খুব পছন্দ করেছে। দ্রুত ডেলিভারির জন্য ধন্যবাদ।',
-          rating: 5
-        },
-        {
-          id: 2,
-          name: 'সুমাইয়া খাতুন',
-          text: 'আখের গুড়টি খুবই বিশুদ্ধ এবং স্বাস্থ্যকর। শিশুদের জন্য নিঃসন্দেহে চিনির চেয়ে ভালো বিকল্প। নিয়মিত অর্ডার দিচ্ছি এবং সেবায় খুব সন্তুষ্ট।',
-          rating: 4
-        },
-        {
-          id: 3,
-          name: 'মোহাম্মদ আলী',
-          text: 'দুই ধরনের গুড়ই চেক করে দেখেছি। মান এবং স্বাদ দুটোই excellent। বিশেষ করে পেয়িং on delivery সিস্টেমটা খুবই সুবিধাজনক। সত্যিই বিশ্বস্ত একটি দোকান।',
-          rating: 5
-        }],
-        
-        getDeliveryCharge(districtName) {
-          const toCharge = {
-            "চুয়াডাঙ্গা": 50,
-            "ঝিনাইদহ": 60,
-            "কুষ্টিয়া": 65,
-            "মেহেরপুর": 60
-          }
-          const charge = toCharge[districtName]
-          if (!charge) {
-            this.shippingFee = 100;
-          } else {
-            this.shippingFee = charge;
-          }
-        },
-        next() { this.current = (this.current + 1) % this.reviews.length; },
-        prev() { this.current = (this.current - 1 + this.reviews.length) % this.reviews.length; }
-      }))
-    })
+      }));
+    });
   </script>
 </body>
 
